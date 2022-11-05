@@ -1,0 +1,114 @@
+.job-block {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 164px;
+    margin: 8px auto;
+    border: 0.5px solid #e6e9f2;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+/* клас для відобрашення курсора поінтером */
+.pointer {
+    cursor: pointer;
+}
+
+/* частина з налаштуванням відображення фото */
+.photo {
+    margin-top: 24px;
+    margin-left: 16px;
+    margin-right: 26px;
+}
+
+img {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+}
+
+/* частина з налаштуванням загальної інформації */
+.info {
+
+    margin-top: 24px;
+    width: 55%;
+    color: grey;
+    line-height: 25px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #616a81;
+    text-decoration: none;
+}
+
+.salary-name {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+}
+
+
+/* налаштування рейтингу */
+.rate {
+
+    margin: auto;
+    margin-left: 279px;
+    width: 15%;
+}
+
+/* налаштування правої частина з букмарком і датою */
+.pin-post {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: grey;
+}
+
+.bookmark {
+    margin-top: 29px;
+    margin-right: 24px;
+    text-align: right;
+
+}
+
+.posted {
+    margin-bottom: 24px;
+    margin-right: 16px;
+    text-align: right;
+    font-size: 16px;
+
+
+}
+
+/* стилі іконок */
+.material-symbols-outlined {
+    color: #38415D;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 200,
+        'opsz' 48
+}
+
+.fill {
+    color: #38415D;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 200,
+        'opsz' 48
+}
