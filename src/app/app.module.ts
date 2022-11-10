@@ -8,6 +8,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { SafePipe } from './pipes/safe.pipe';
     JobListComponent,
     JobDetailsComponent,
     NotFoundComponent,
-    SafePipe
+    SafePipe,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
