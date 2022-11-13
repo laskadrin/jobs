@@ -8,7 +8,7 @@
     border-radius: 8px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+
     font-family: 'Proxima Nova';
 
 }
@@ -16,6 +16,20 @@
 /* клас для відобрашення курсора поінтером */
 .pointer {
     cursor: pointer;
+}
+
+
+
+.photo-info {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.rate-pin-post {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
 }
 
 /* частина з налаштуванням відображення фото */
@@ -35,7 +49,8 @@ img {
 .info {
 
     margin-top: 24px;
-    width: 55%;
+    width: 70%;
+    min-width: 45%;
     color: grey;
     line-height: 25px;
 }
@@ -66,13 +81,14 @@ img {
 .rate {
 
     margin: auto;
-    margin-left: 279px;
-    width: 15%;
+    text-align: right;
+    width: 50%;
+
 }
 
 /* налаштування правої частина з букмарком і датою */
 .pin-post {
-    width: 15%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -112,4 +128,70 @@ img {
         'wght' 400,
         'GRAD' 200,
         'opsz' 48
+}
+
+
+pagination-controls {
+    text-align: center;
+}
+
+@media only screen and (max-width: 850px) {
+    .job-block {
+        flex-direction: column-reverse;
+        width: 400px;
+    }
+
+    .photo-info {
+        width: 100%;
+    }
+
+    .info {
+        margin-top: 5px;
+    }
+
+    .rate-pin-post {
+        width: 70%;
+        margin-left: 30%;
+
+    }
+
+    .pin-post {
+        flex-direction: row;
+        justify-content: right;
+    }
+
+    .bookmark {
+        width: 0;
+        display: none;
+    }
+
+    .posted {
+        margin: auto;
+        text-align: right;
+        font-size: 14px;
+        align-content: center;
+    }
+
+    .rate {
+        margin: 0;
+        text-align: left;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 100,
+            'GRAD' 200,
+            'opsz' 48
+    }
+
+    .rate>div>span {
+        width: 15px;
+        height: 15px;
+    }
+
+    .fill {
+        font-variation-settings:
+            'FILL' 1,
+            'wght' 100,
+            'GRAD' 200,
+            'opsz' 48
+    }
 }

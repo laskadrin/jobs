@@ -1,6 +1,6 @@
 <div class="page">
     <div class="main">
-        <div class="header">
+        <div class="header border-bottom">
             <span class="h-details">Job Details</span>
             <div class="h-functions roboto-normal">
                 <div class="save pointer">
@@ -19,7 +19,6 @@
             </div>
 
         </div>
-        <mat-divider class="divider"></mat-divider>
         <button class="apply pointer">APPLY NOW</button>
         <div class="name-salary">
             <div class="name">
@@ -31,36 +30,41 @@
             </div>
         </div>
         <div class="posted roboto-normal">
-            <span>Posted {{daysAgo(job.createdAt)}} days ago</span>
+            <span>{{daysAgo(job.createdAt)}}</span>
         </div>
         <div class="description roboto-normal">
             <p>{{job.description}}</p>
         </div>
 
         <button class="apply pointer">APPLY NOW</button>
-        <div class="additional">
-            <span>Additional info</span>
-            <mat-divider class="divider"></mat-divider>
-            <span class="roboto-normal">Employment type</span>
-            <div class="employment-type">
-                <div class="type" *ngFor="let type of job.employment_type"><span>{{type}}</span></div>
-            </div>
-            <span class="roboto-normal">Benefits</span>
-            <div class="benefits">
-                <div class="benefit" *ngFor="let benefit of job.benefits"><span>{{benefit}}</span></div>
-            </div>
-        </div>
-
-        <div class="images">
-            <span>Attached images</span>
-            <div class="collection">
-                <div *ngFor="let imgurl of job.pictures"><img src='{{imgurl}}' alt=""></div>
+        <div class="more-and-images">
+            <div class="additional">
+                <span class="border-bottom add-info-text">Additional info</span>
+                <span class="roboto-normal">Employment type</span>
+                <div class="employment-type">
+                    <div class="type" *ngFor="let type of job.employment_type"><span>{{type}}</span></div>
+                </div>
+                <span class="roboto-normal">Benefits</span>
+                <div class="benefits">
+                    <div class="benefit" *ngFor="let benefit of job.benefits"><span>{{benefit}}</span></div>
+                </div>
             </div>
 
+            <div class="images">
+                <span>Attached images</span>
+                <div class="collection">
+                    <div *ngFor="let imgurl of job.pictures"><img src='{{imgurl}}' alt=""></div>
+                </div>
+
+            </div>
         </div>
         <a [routerLink]='["/jobs"]'><button class="return pointer"><span class="material-symbols-outlined">
                     arrow_back_ios
                 </span><span>RETURN TO JOB BOARD</span></button></a>
+
+        <div class="contacts-header">
+            <span>Contacts</span>
+        </div>
 
     </div>
     <aside>

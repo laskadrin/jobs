@@ -22,13 +22,19 @@ export class JobDetailsComponent implements OnInit {
   job: any = {}
   async ngOnInit() {
     this.job = await this.jobApiService.getJob(this.activatedRoute.snapshot.params['id'])
-    console.log(this.job)
   }
   daysAgo(date: string) {
     const dateOfPost = Date.parse(date),
       diffTime = Math.abs(Date.now() - dateOfPost),
       daysGone = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return daysGone;
+    if (daysGone == 0) {
+      return 'Posted today'
+    } else if (daysGone == 1) {
+      return 'Posted yesterday'
+    } else {
+      return 'Posted ' + daysGone + ' days ago';
+    }
+
   }
   locationFinder(lat: string, long: string) {
     return "https://maps.google.com/maps?q=" + lat + "," + long + "&t=&z=13&ie=UTF8&iwloc=&output=embed"

@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SafePipe } from './pipes/safe.pipe';
-import { MatDividerModule } from '@angular/material/divider';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { MatDividerModule } from '@angular/material/divider';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatPaginatorModule,
-    MatDividerModule
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

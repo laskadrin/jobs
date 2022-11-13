@@ -8,10 +8,13 @@ import { JobApiService } from '../services/job-api.service';
 })
 export class JobListComponent implements OnInit {
   jobs: any = []
+  page: number = 1;
   constructor(
     public jobApiService: JobApiService,
 
-  ) { }
+  ) {
+
+  }
 
   async ngOnInit() {
     this.jobs = await this.jobApiService.getJobs();
@@ -21,7 +24,13 @@ export class JobListComponent implements OnInit {
     const dateOfPost = Date.parse(date),
       diffTime = Math.abs(Date.now() - dateOfPost),
       daysGone = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return daysGone;
+    if (daysGone == 0) {
+      return 'Posted today'
+    } else if (daysGone == 1) {
+      return 'Posted yesterday'
+    } else {
+      return 'Posted ' + daysGone + ' days ago';
+    }
   }
 
 

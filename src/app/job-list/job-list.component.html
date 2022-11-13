@@ -1,60 +1,55 @@
 <div class="main">
-    <div class="job-block" *ngFor="let job of jobs">
-
-
-
-
-
-
-
-
-        <div class="photo">
-            <img src="{{job.pictures[0]}}" alt="">
-        </div>
-        <div class="info">
-            <a [routerLink]="[job.id]" class="title">
-
-                <span>{{job.title}}</span>
-            </a>
-            <div class="salary-name">
-                <span disabled>Salary: {{job.salary}}</span><span> &#8226;
-                    <span></span></span><span>{{job.name}}</span>
-
+    <div class="job-block" *ngFor="let job of jobs | paginate: {itemsPerPage: 10, currentPage: page}">
+        <div class="photo-info">
+            <div class="photo">
+                <img src="{{job.pictures[0]}}" alt="">
             </div>
+            <div class="info">
+                <a [routerLink]="[job.id]" class="title">
 
-            <div class="location">
-                <span class="material-symbols-outlined">
-                    location_on
-                </span> <span>{{job.address}}</span>
+                    <span>{{job.title}}</span>
+                </a>
+                <div class="salary-name">
+                    <span disabled>Salary: {{job.salary}}</span><span> &#8226;
+                        <span></span></span><span>{{job.name}}</span>
+
+                </div>
+
+                <div class="location">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span> <span>{{job.address}}</span>
+                </div>
             </div>
         </div>
-        <div class="rate">
-            <div *ngIf="job.name == 'Sureplex' || job.name == 'Zerology'" class="pointer">
-                <span class="material-symbols-rounded fill">
-                    star
+        <div class="rate-pin-post">
+            <div class="rate">
+                <div *ngIf="job.name == 'Sureplex' || job.name == 'Zerology'" class="pointer">
+                    <span class="material-symbols-rounded fill">
+                        star
+                    </span>
+                    <span class="material-symbols-rounded fill">
+                        star
+                    </span>
+                    <span class="material-symbols-rounded fill">
+                        star
+                    </span>
+                    <span class="material-symbols-rounded fill">
+                        star
+                    </span>
+                    <span class="material-symbols-rounded">
+                        star
+                    </span>
+                </div>
+            </div>
+            <div class="pin-post">
+                <span class="material-symbols-outlined pointer bookmark">
+                    bookmark
                 </span>
-                <span class="material-symbols-rounded fill">
-                    star
-                </span>
-                <span class="material-symbols-rounded fill">
-                    star
-                </span>
-                <span class="material-symbols-rounded fill">
-                    star
-                </span>
-                <span class="material-symbols-rounded">
-                    star
-                </span>
+                <span class="posted">{{daysAgo(job.createdAt)}}</span>
             </div>
         </div>
-        <div class="pin-post">
-            <span class="material-symbols-outlined pointer bookmark">
-                bookmark
-            </span>
-            <span class="posted">Posted {{daysAgo(job.createdAt)}} days ago</span>
-        </div>
+
     </div>
-    <mat-paginator [length]="jobs.length" [pageSize]="15">
-
-    </mat-paginator>
+    <pagination-controls (pageChange)="page = $event" previousLabel="" nextLabel="" pre></pagination-controls>
 </div>
